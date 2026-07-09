@@ -3,9 +3,11 @@ import pickle
 import requests 
 
 def fetch_poster(movie_id):
-    response=requests.get("https://api.themoviedb.org/3/movie/{}?api_key=28056a44de885fdfe40e6072e27d7d39".format(movie_id))
-    data=response.json()
-    return "https://image.tmdb.org/t/p/w500"+ data['poster_path']
+    api_key = st.secrets["TMDB_API_KEY"]
+    
+    response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key={}".format(movie_id, api_key))
+    data = response.json()
+    return "https://image.tmdb.org/t/p/w500" + data['poster_path']
 
 
 def recommend(movie):

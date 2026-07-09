@@ -2,7 +2,7 @@
 
 A content-based movie recommendation web app built with Python and Streamlit. Pick a movie you like, and it suggests 5 similar movies along with their posters, fetched live from The Movie Database (TMDB).
 
-**Live app:** https://movie-recommender-by-sneh.streamlit.app/
+[![Live App](https://img.shields.io/badge/🚀%20Live%20App-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://movie-recommender-by-sneh.streamlit.app/)  Made by [Sneh Patel](https://github.com/snehpatel05)
 
 ## How it works
 

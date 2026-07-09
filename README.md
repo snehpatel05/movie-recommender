@@ -1,4 +1,4 @@
-# 🎬 Movie Recommender
+# Movie Recommender
 
 A content-based movie recommendation web app built with Python and Streamlit. Pick a movie you like, and it suggests 5 similar movies along with their posters, fetched live from The Movie Database (TMDB).
 

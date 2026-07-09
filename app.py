@@ -30,12 +30,12 @@ selected_movie_name=st.selectbox("Enter a movie",movies_li)
 
 if st.button("Recommend"):
     names, posters = recommend(selected_movie_name)
-    
-    # Creates 5 columns in one row
     columns = st.columns(5)
     
-    # Loops through all 5 columns dynamically to display the text and poster in one line
     for index, col in enumerate(columns):
         with col:
-            st.text(names[index])
+            st.markdown(
+                f"<div style='height: 90px; font-size: 14px; font-weight: 600; line-height: 1.3;'>{names[index]}</div>", 
+                unsafe_allow_html=True
+            )
             st.image(posters[index])

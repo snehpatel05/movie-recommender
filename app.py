@@ -1,6 +1,7 @@
 import os
 import pickle
 from functools import lru_cache
+from pathlib import Path
 
 import requests
 from flask import Flask, jsonify, render_template, request
@@ -10,10 +11,11 @@ app = Flask(__name__)
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
 TMDB_IMAGE_URL = "https://image.tmdb.org/t/p"
 TMDB_API_KEY = os.environ.get("TMDB_API_KEY", "")
+BASE_DIR = Path(__file__).resolve().parent
 
-with open("movies.pkl", "rb") as movies_file:
+with open(BASE_DIR / "movies.pkl", "rb") as movies_file:
     movies = pickle.load(movies_file)
-with open("similarity.pkl", "rb") as similarity_file:
+with open(BASE_DIR / "similarity.pkl", "rb") as similarity_file:
     similarity = pickle.load(similarity_file)
 
 

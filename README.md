@@ -17,7 +17,7 @@ Open `http://localhost:5000`.
 Create a new **Web Service** from this repository. Render can use the included `render.yaml`, or set:
 
 - Build command: `pip install -r requirements.txt`
-- Start command: `gunicorn --timeout 120 --bind 0.0.0.0:$PORT app:app`
+- Start command: `streamlit run app.py --server.address 0.0.0.0 --server.port $PORT`
 - Environment variable: `TMDB_API_KEY` with your TMDB v3 API key
 
 The model artifacts `movies.pkl` and `similarity.pkl` must remain in the project root.

@@ -1,23 +1,23 @@
-# Reelwise
+# Movie Recommender
 
-A lightweight movie recommender with the original content-based model, a Flask API, and a single HTML/CSS/JavaScript frontend.
+A simple Streamlit movie recommender using the original content-based model and TMDB posters.
 
 ## Local setup
 
 ```bash
 pip install -r requirements.txt
-$env:TMDB_API_KEY="your_tmdb_api_key"
-python app.py
+streamlit run app.py
 ```
 
-Open `http://localhost:5000`.
+## Streamlit Community Cloud
 
-## Render deployment
+1. Open [share.streamlit.io](https://share.streamlit.io/).
+2. Choose this GitHub repository and the `main` branch.
+3. Set the main file to `app.py`.
+4. Add this secret in **Advanced settings**:
 
-Create a new **Web Service** from this repository. Render can use the included `render.yaml`, or set:
-
-- Build command: `pip install -r requirements.txt`
-- Start command: `streamlit run app.py --server.address 0.0.0.0 --server.port $PORT`
-- Environment variable: `TMDB_API_KEY` with your TMDB v3 API key
+```toml
+TMDB_API_KEY = "your_tmdb_api_key"
+```
 
 The model artifacts `movies.pkl` and `similarity.pkl` must remain in the project root.
